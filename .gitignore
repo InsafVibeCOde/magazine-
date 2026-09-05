@@ -1,0 +1,23 @@
+# Локальный сервер для разработки
+serve.js
+
+# Артефакты Playwright (тестовые скриншоты/логи)
+.playwright-mcp/
+
+# Временные скриншоты проверки
+mobile-nav.png
+
+# ОС
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Служебные файлы редакторов
+.vscode/
+.idea/
+*.swp

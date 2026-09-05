@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магазин — Премиальные морепродукты и экзотика в Йошкар-Оле</title>
+  <meta name="description" content="Свежая форель, красная иква и экзотические фрукты с доставкой по Йошкар-Оле. Личный контроль качества.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            brand: {
+              dark: '#0B1120',
+              card: '#111827',
+              blue: '#3B82F6',
+              'blue-hover': '#2563EB',
+              gold: '#F59E0B',
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .card-glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .card-glass:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .js .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-gray-300 antialiased">
+
+  <nav class="fixed top-4 left-0 right-0 z-50 px-4">
+    <div class="mx-auto w-full max-w-2xl rounded-full border border-white/10 bg-slate-800/70 backdrop-blur-xl shadow-lg shadow-black/30 px-3 sm:px-4 py-2 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-1 sm:gap-2 min-w-0">
+        <a href="#hero" class="text-gray-200 hover:text-white text-xs sm:text-sm font-normal transition-colors px-2.5 sm:px-3 py-1.5 rounded-full hover:bg-white/5 whitespace-nowrap">Главная</a>
+        <a href="#about" class="text-gray-200 hover:text-white text-xs sm:text-sm font-normal transition-colors px-2.5 sm:px-3 py-1.5 rounded-full hover:bg-white/5 whitespace-nowrap">О нас</a>
+        <a href="#delivery" class="text-gray-200 hover:text-white text-xs sm:text-sm font-normal transition-colors px-2.5 sm:px-3 py-1.5 rounded-full hover:bg-white/5 whitespace-nowrap">Доставка</a>
+      </div>
+      <a href="tel:+79518980000" class="text-white text-xs sm:text-sm font-semibold tracking-wide whitespace-nowrap bg-brand-blue hover:bg-brand-blue-hover rounded-full px-3.5 sm:px-4 py-2 transition-colors shadow-lg shadow-blue-500/25">
+        +7 951 898 00 00
+      </a>
+    </div>
+  </nav>
+
+  <header id="hero" class="relative w-full min-h-[88vh] overflow-hidden bg-slate-900 flex flex-col">
+
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950"></div>
+      <div class="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-brand-gold/10 blur-3xl"></div>
+      <div class="absolute top-1/3 -right-40 w-[28rem] h-[28rem] rounded-full bg-blue-500/10 blur-3xl"></div>
+    </div>
+
+    <div class="relative z-20 max-w-6xl mx-auto w-full px-5 sm:px-4 py-20 flex-1 flex items-center justify-center md:justify-start">
+      <div class="text-center md:text-left w-full">
+        <p class="inline-flex items-center justify-center gap-2 text-brand-gold font-medium tracking-wide uppercase text-xs sm:text-sm mb-3">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.578 19.578 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd"/></svg>
+          Йошкар-Ола
+        </p>
+        <h1 class="font-display text-[1.7rem] leading-snug sm:text-5xl lg:text-6xl font-bold text-white mb-4">
+          Премиальные продукты
+          <span class="block">с доставкой по городу</span>
+        </h1>
+        <p class="text-base sm:text-lg text-gray-300 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
+          Форель, красная икра, экзотические фрукты и ягоды. Отборные продукты с прямых поставок.
+        </p>
+        <a href="#catalog" class="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold px-8 py-4 rounded-full text-base sm:text-lg transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 w-full sm:w-auto">
+          Открыть ассортимент в MAX
+        </a>
+        <p class="mt-3 text-sm text-gray-400">Цены, наличие и заказ — в MAX</p>
+        <p class="mt-1 text-sm text-gray-500">Получите 10% скидку на первый заказ</p>
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+
+    <section id="catalog" class="py-14 sm:py-20 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-10 reveal">
+          <h2 class="font-display text-3xl sm:text-4xl md:text-4xl font-bold text-white mb-3">Отборные продукты для вашего стола</h2>
+          <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">Свежая рыба и деликатесы. Спелые фрукты и ягоды. Всё с доставкой по Йошкар-Оле.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-5 lg:gap-6">
+
+          <div class="card-glass rounded-2xl overflow-hidden transition-all duration-300 group reveal">
+            <div class="bg-slate-900 overflow-hidden">
+              <img src="img/рыба-4x3.png" alt="Премиальная рыба и деликатесы" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="600">
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3 class="font-display text-xl sm:text-2xl font-bold text-white mb-2">Премиальная рыба и деликатесы</h3>
+              <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-4">Охлаждённая форель, красная икра, морепродукты.</p>
+              <a href="https://t.me/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-blue hover:text-blue-400 font-medium transition-colors">
+                Смотреть в MAX
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="card-glass rounded-2xl overflow-hidden transition-all duration-300 group reveal">
+            <div class="bg-slate-900 overflow-hidden">
+              <img src="img/фрукты.png" alt="Свежие фрукты и ягоды" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="800" height="600">
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3 class="font-display text-xl sm:text-2xl font-bold text-white mb-2">Свежие фрукты и ягоды</h3>
+              <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-4">Спелое манго, инжир, авокадо, свежие ягоды и многое другое</p>
+              <a href="https://t.me/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-blue hover:text-blue-400 font-medium transition-colors">
+                Смотреть в MAX
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-12 sm:py-16 px-4 bg-brand-card/50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-6 reveal">
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mb-3">О нас</h2>
+          <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            Мы — небольшой магазин в Йошкар-Оле, который выбрал для себя два направления: морепродукты и экзотические фрукты. Мы не продаём всё подряд — мы продаём только то, в чём уверены лично. Каждую партию проверяем сами, чтобы вы получали только лучшее.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="delivery" class="py-20 sm:py-28 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-14 reveal">
+          <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Бережная доставка по Йошкар-Оле</h2>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto">Свежесть — главный приоритет. Поэтому работаем аккуратно.</p>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-6 lg:gap-8">
+
+          <div class="card-glass rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 reveal">
+            <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-blue-500/15 flex items-center justify-center">
+              <svg class="w-7 h-7 text-brand-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0H21a.75.75 0 0 0 .75-.75V11.25a3 3 0 0 0-3-3h-1.5l-1.72-4.575A1.5 1.5 0 0 0 13.073 2.25H10.927a1.5 1.5 0 0 0-1.432 1.025L7.773 7.875H6.375a3 3 0 0 0-3 3v6.75A2.25 2.25 0 0 0 5.625 19.875h.002"/></svg>
+            </div>
+            <h3 class="text-white font-semibold text-lg mb-2">Доставка курьером</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">120–200 ₽. В термобоксах, чтобы сохранить свежесть.</p>
+          </div>
+
+          <div class="card-glass rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 reveal">
+            <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-emerald-500/15 flex items-center justify-center">
+              <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+            </div>
+            <h3 class="text-white font-semibold text-lg mb-2">Самовывоз</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Бесплатно. Из пункта выдачи — когда вам удобно.</p>
+          </div>
+
+          <div class="card-glass rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 reveal">
+            <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-brand-gold/15 flex items-center justify-center">
+              <svg class="w-7 h-7 text-brand-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"/></svg>
+            </div>
+            <h3 class="text-white font-semibold text-lg mb-2">Оплата при получении</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Перевод или наличные. Удобно и просто.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="telegram" class="py-16 sm:py-20 px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="card-glass rounded-3xl p-6 sm:p-10 text-center reveal">
+          <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">Личный контроль качества</h2>
+          <p class="text-gray-400 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-6">
+            Я лично проверяю каждую партию. В моём канале публикую свежие поставки.
+          </p>
+          <div class="bg-gradient-to-r from-emerald-500/15 to-teal-500/15 border border-emerald-500/30 rounded-2xl p-5 sm:p-6 mb-6">
+            <p class="text-lg sm:text-xl font-bold text-white">
+              Подпишитесь на канал — получите скидку 10% на первый заказ!
+            </p>
+          </div>
+          <a href="https://t.me/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 animate-pulse-slow hover:animate-none w-full sm:w-auto">
+            Забрать скидку 10% и подписаться
+          </a>
+          <p class="text-gray-500 text-sm mt-5">Уже 1 500+ подписчиков в канале</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="py-10 px-4 border-t border-white/5">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-gray-500 text-sm">&copy; 2026 Магазин. Йошкар-Ола.</p>
+      <a href="https://t.me/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-brand-blue text-sm transition-colors">
+        Написать в MAX
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.classList.add('js');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+
+</body>
+</html>
